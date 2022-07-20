@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:macierze"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="520" Width="800">
+    <Grid Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="263*"/>
             <ColumnDefinition Width="105*"/>
-            <ColumnDefinition Width="432*"/>
+            <ColumnDefinition Width="371*"/>
+            <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <Frame Content="" OpacityMask="#FFE8D4D4" Background="#FFEAE8E8" NavigationUIVisibility="Hidden"/>
-        <Label Content="Size of  mother:" HorizontalAlignment="Left" Margin="0,98,0,0" VerticalAlignment="Top" Width="159" Height="27" FontWeight="Bold" FontFamily="Arial"/>
+        <Frame Content="" OpacityMask="#FFE8D4D4" Background="#FFEAE8E8" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="2,-29,103,0"/>
+        <Label Content="Size of  mother:" HorizontalAlignment="Left" Margin="0,84,0,0" VerticalAlignment="Top" Width="159" Height="27" FontWeight="Bold" FontFamily="Arial"/>
         <Button Content="Browse" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Click="Button_Click" Width="58" Height="20"/>
         <Label x:Name="fileInfoLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="222" Height="28" Background="#FFF7F4F4" Foreground="#FF0F100F" BorderBrush="#FFE80303" BorderThickness="0,0,0,1"/>
-        <Frame x:Name="motherContainer" Grid.Column="1" Content="" Margin="53,64,52,106" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
-        <ComboBox x:Name="sizeOfMother_ComboBox" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="sizeOfMother_ComboBox_SelectionChanged" RenderTransformOrigin="0.481,0.498">
+        <Frame x:Name="motherContainer" Grid.Column="1" Content="" Margin="53,64,52,106" NavigationUIVisibility="Hidden" Grid.ColumnSpan="3" />
+        <ComboBox x:Name="sizeOfMother_ComboBox" HorizontalAlignment="Left" Margin="8,105,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SizeOfMother_ComboBox_SelectionChanged" RenderTransformOrigin="0.481,0.498">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
@@ -29,13 +30,16 @@
             <ComboBoxItem>9</ComboBoxItem>
             <ComboBoxItem>10</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="60" Click="saveMotherFromUserInput" />
-        <Label Content="Row" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top"/>
-        <Label Content="Column&#xD;&#xA;" HorizontalAlignment="Left" Margin="121,238,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="rowInput" HorizontalAlignment="Left" Margin="6,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
-        <TextBox x:Name="ColumnInput" HorizontalAlignment="Left" Margin="121,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
-        <Label x:Name="resultContainer" Content="" HorizontalAlignment="Left" Margin="6,323,0,0" VerticalAlignment="Top" Height="101" Width="226"/>
-        <Button x:Name="calculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="6,292,0,0" VerticalAlignment="Top" Width="62" Click="calculateButton_Click"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="9,141,0,0" VerticalAlignment="Top" Width="60" Click="SaveMotherFromUserInput" />
+        <Label Content="Row" HorizontalAlignment="Left" Margin="9,196,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Content="Column&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" Height="24" Margin="0,196,0,0"/>
+        <TextBox x:Name="rowInput" HorizontalAlignment="Left" Margin="10,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" Height="18"/>
+        <TextBox x:Name="ColumnInput" HorizontalAlignment="Left" Margin="106,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" Height="19"/>
+        <Label x:Name="resultContainer" Content="" HorizontalAlignment="Left" Margin="6,259,0,0" VerticalAlignment="Top" Height="88" Width="226"/>
+        <Button x:Name="calculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="184,223,0,0" VerticalAlignment="Top" Width="62" Click="CalculateButton_Click" Height="21"/>
+        <Label Content="Save to: (only .txt format supported)" HorizontalAlignment="Left" Margin="6,375,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label x:Name="fileInfoLabel2" Content="" HorizontalAlignment="Left" Margin="9,406,0,0" VerticalAlignment="Top" Width="222" Height="28" Background="#FFF7F4F4" Foreground="#FF0F100F" BorderBrush="#FFE80303" BorderThickness="0,0,0,1"/>
+        <Button Content="Browse &amp; Save" HorizontalAlignment="Left" Margin="8,445,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

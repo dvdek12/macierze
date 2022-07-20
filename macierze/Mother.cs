@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 public class Mother
 {
@@ -63,6 +65,23 @@ public class Mother
 	//funkcja ktora zapisuje macierz do pliku
 	public void saveToFile(string path)
     {
-		//todo
+        try
+        {
+			using (StreamWriter sw = new StreamWriter(path))
+			{
+                for (int i = 0; i < this.size; i++)
+                {
+                    for (int j = 0; j < this.mother[i].Length; j++)
+						sw.Write(this.mother[i][j] + " ");
+                    
+					sw.WriteLine();
+                }
+			}
+
+        }
+		catch(Exception exec)
+        {
+			return;
+        }
     }
 }
